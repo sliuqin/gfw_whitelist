@@ -42,6 +42,8 @@ function FindProxyForURL(url, host)
 
     // skip cn domains
     if (shExpMatch(host,"*.cn")) return 'DIRECT';
+    // skip alibaba domains
+    if (shExpMatch(host,"*.ali*")) return 'DIRECT';
 
     // skip ftp
     if (shExpMatch(url, "ftp:*")) return 'DIRECT';
