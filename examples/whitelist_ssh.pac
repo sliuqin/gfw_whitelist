@@ -62,14 +62,23 @@ function FindProxyForURL(url, host)
     // (1) custom list
     // (2) https://dl-web.dropbox.com/u/3241202/apps/chn-cdn/dnsmasq.server.conf
     // (3) Domestic CDN and cloud
-    // (4) alexa 500
-    //     less all the cn domains
+    // (4) alexa 500tbcdn.cn
+    //     less all ttbcdn.cnhe cn domains
     //     less google.com.hk, google.com, google.co.uk, googleusercontent.com
     //     google.com.tw, tumblr.com, wikipedia.org, youtube, github, wordpress
     //     wsj.com, godaddy,stackoverflow.com, zaobao.com
 
     // custom list. feel free to add.
     // mostly ad servers and img servers
+    
+        // alibaba
+    if( 
+        shExpMatch(host, "(*\.|)alibaba-inc.com") ||
+        shExpMatch(host, "(*\.|)tbcdn.cn")
+    ) {
+        return 'DIRECT';
+    }
+    
     if( 
         shExpMatch(host, "(*\.|)kandian.com") ||
         shExpMatch(host, "(*\.|)homeinns.com") ||
