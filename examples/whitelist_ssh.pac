@@ -22,7 +22,7 @@ function FindProxyForURL(url, host)
      *                                                 *
      * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-    var ip_address = '127.0.0.1:8808';
+    var ip_address = '10.23.8.125:3128';
     var proxy_type = 'SOCKS' 
 
     // HTTPS 是用于 Chrome 的安全代理
